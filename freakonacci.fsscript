@@ -1,0 +1,11 @@
+open System.Numerics
+
+let fibs =
+    Seq.unfold (fun (current, next) -> Some(current, (next, current + next))) (BigInteger 0, BigInteger 1)
+
+Seq.take 10 fibs
+|> Seq.toList
+|> printfn "%A"
+
+Seq.nth 100 fibs
+|> printfn "%A"
