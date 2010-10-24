@@ -1,4 +1,4 @@
-lazy val fibs: Stream[BigInt] = 0 #:: 1 #:: fibs.zip(fibs.tail).map { p => p._1 + p._2 }
+lazy val fibs: Stream[BigInt] = 0 #:: 1 #:: fibs.zip(fibs.tail).map { case (a, b) => a + b }
 
 fibs.take(10).print
 println
